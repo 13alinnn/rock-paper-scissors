@@ -1,1 +1,1 @@
-# rock-paper-scissors
+Third project from The Odin Project. I won't be focusing on a GUI, I will build a rock paper scissors game playable in the console
