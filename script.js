@@ -20,11 +20,7 @@ rock.addEventListener("click", () => {
 		won();
 	} else lost();
 	if (isGameOver()) {
-		if (computerScore === 5) alert("You lost! Play again?");
-		else alert("You won! Play again?");
-		humanScore = 0;
-		computerScore = 0;
-        para.textContent = 'Let\'s begin!';
+        gameOver();
 	}
 });
 
@@ -37,11 +33,7 @@ paper.addEventListener("click", () => {
 		won();
 	} else lost();
 	if (isGameOver()) {
-		if (computerScore === 5) alert("You lost! Play again?");
-		else alert("You won! Play again?");
-		humanScore = 0;
-		computerScore = 0;
-        para.textContent = 'Let\'s being';
+        gameOver();
 	}
 });
 
@@ -54,11 +46,7 @@ scissors.addEventListener("click", () => {
 		won();
 	} else lost();
 	if (isGameOver()) {
-		if (computerScore === 5) alert("You lost! Play again?");
-		else alert("You won! Play again?");
-		humanScore = 0;
-		computerScore = 0;
-        para.textContent = 'Let\'s begin!';
+        gameOver();
 	}
 });
 
@@ -83,7 +71,14 @@ function isGameOver() {
 	if (humanScore >= 5 || computerScore >= 5) return true;
 	return false;
 }
-
+function gameOver() {
+    if (computerScore === 5) alert("You lost! Play again?");
+    else alert("You won! Play again?");
+    humanScore = 0;
+    computerScore = 0;
+    para.textContent = 'Let\'s begin!';
+    score = '0 - 0';
+}
 function getComputerChoice() {
 	let rnd = Math.random();
 	if (rnd < 0.33) return "rock";
